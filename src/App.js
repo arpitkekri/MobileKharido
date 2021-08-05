@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 import './App.css';
 
 // import package/distribution folder {dist} /file location/ filename
@@ -14,11 +15,14 @@ class App extends Component {
   render() {
     return (
         <React.Fragment>
+          {/* Exclude Navbar from Switch because we want to display NavBar on all the pages */}
           <Navbar></Navbar>
-          <ProductList></ProductList>
-          <Details></Details>
-          <Cart></Cart>
-          <Default></Default>
+          <Switch>
+            <Route exact path = "/" component = { ProductList } />
+            <Route path = "/details" component = { Details } />
+            <Route path = "/cart" component = { Cart } />
+            <Route component = { Default } />
+          </Switch>
         </React.Fragment>
     );
   }
