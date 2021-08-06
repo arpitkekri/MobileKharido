@@ -1,46 +1,49 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
+import logo2 from '../favicon3.ico';
 import styled from 'styled-components';
 import { ButtonContainer } from './Button';
 export default class Navbar extends Component {
     render() {
         return (
-            <NavWrapper className = "navbar navbar-expand-sm navbar-dark px-sm-5">
+            <Nav className = "navbar navbar-expand-sm navbar-dark px-sm-5">
                 {/* https://www.iconfinder.com/icons/1243689/call_phone_icon
                 Creative Commons (Attribution 3.0 Unported);
                 https://www.iconfinder.com/Makoto_msk */}
                 <Link to = "/">
-                    <img src = { logo } alt="Jain Mobile Point" className = "navbar-brand"/>
+                    <img src = { logo2 } alt="Jain Mobile Point" className = "navbar-brand" width = "60"/>
                 </Link>
                 <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-5">
-                        <Link to = "/" className = "nav-link">
-                            products
+                    <li className="nav-item ms-5">
+                        <Link to="/" className="nav-link">
+                        products
                         </Link>
                     </li>
                 </ul>
-                <Link to="/cart" className = "ml-auto">
+                <Link to="/cart" className = "ms-auto">
                     <ButtonContainer>
                         <span className="mr-2">
-                            <i className="fas fa-cart-plus" />
+                            <i className="fas fa-cart-plus " />
                         </span>
                         my cart
                     </ButtonContainer>
                 </Link>
-            </NavWrapper>
-        )
+            </Nav>
+        );
     }
 }
 
-const NavWrapper = styled.nav`
+const Nav = styled.nav`
   background: var(--mainBlue);
-  .nav-link{
+  .nav-link {
     color: var(--mainWhite) !important;
-    font-size: 1.3rem;
-    // 1 rem = 16px
+    font-size:1.3rem;
     text-transform:capitalize;
   }
+  @media (max-width: 576px) {
+    .navbar-nav {
+      flex-direction: row !important;
 `;
 
 // const ButtonContainer = styled.button`
