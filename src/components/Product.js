@@ -12,7 +12,7 @@ export default class Product extends Component {
         <div className="card">
           <div className="img-container p-5" onClick={()=>console.log('You clicked me on the image container')}>
             <Link to="/details">
-              <img src={img} alt="product" className="card-img-top"/>
+              <img src={ img } alt="product" className="card-img-top"/>
             </Link>
             <button className = "cart-btn" disabled = {inCart ? true: 
               false} onClick={()=>{console.log('added to the cart');
@@ -29,7 +29,7 @@ export default class Product extends Component {
             <p className="align-self-center mb-0">{title}</p>
             <h5 className="text-blue font-italic mb-0">
               <span className="me-1">₹</span>
-              {price}
+              { price }
               <span className="me-1">/-</span>
             </h5>
           </div>
