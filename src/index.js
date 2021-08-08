@@ -4,7 +4,7 @@ import './index.css';
 import App from './App.js';
 import { BrowserRouter as Router } from "react-router-dom";
 import { ProductProvider } from './context';
-import reportWebVitals from './reportWebVitals';
+// import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   // React.StrictMode is working only on development server it will not bundles in final build 

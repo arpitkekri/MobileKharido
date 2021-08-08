@@ -10,7 +10,10 @@ class ProductProvider extends Component {
     detailProduct: detailProduct,
     cart: [],
     modalOpen: false,
-    modalProduct: detailProduct
+    modalProduct: detailProduct,
+    cartSubTotal: 0,
+    cartTax: 0,
+    cartTotal:0
   };
 
   // componentDidMount -> This function called immediately after a component is mounted. Setting state here will trigger re-rendering.
@@ -40,7 +43,7 @@ class ProductProvider extends Component {
   addToCart = (id) => {
     // let tempProducts = [...this.state.products];
     // const index = tempProducts.indexOf(this.getItem(id));
-    let tempProducts = this.state.products;
+    // const product = tempProducts[index];
     const product = this.getItem(id);
     product.inCart = true;
     product.count = 1;
@@ -61,6 +64,7 @@ class ProductProvider extends Component {
           return { modalOpen: false };
       });
   };
+
   /*
         Here the problem is Javasricpt referencing, it is not copying the values
         instead it assign reference to the state, so for making a deep copy we have to
