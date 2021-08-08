@@ -64,7 +64,18 @@ class ProductProvider extends Component {
           return { modalOpen: false };
       });
   };
-
+  increment = (id) => {
+      console.log("This is increment method");
+  }
+  decrement = (id) => {
+    console.log("This is decrement method");
+  }
+  removeItem = (id) => {
+      console.log('item removed');
+  }
+  clearCart = () => {
+      console.log('card cleared');
+  }
   /*
         Here the problem is Javasricpt referencing, it is not copying the values
         instead it assign reference to the state, so for making a deep copy we have to
@@ -94,7 +105,11 @@ class ProductProvider extends Component {
           handleDetail: this.handleDetail,
           addToCart: this.addToCart,
           openModal: this.openModal,
-          closeModal: this.closeModal
+          closeModal: this.closeModal,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart
         }}
       >
         {this.props.children}
