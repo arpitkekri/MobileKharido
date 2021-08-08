@@ -23,27 +23,21 @@ export default class Details extends Component {
               {/* product info */}
               <div className="row">
                 {/* product image */}
-                <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-                  <img src={img} alt="product image" className="img-fluid" />
+                <div className="col-10 mx-auto col-md-6 my-3">
+                  <img src = { img } alt="Product Image" className="img-fluid" />
                 </div>
 
                 {/* product text */}
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-                  <h2> model : {title} </h2>
+                  <h2> model : { title } </h2>
                   <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
-                    made by :
-                    <span className="text-uppercase"> {company} </span>
+                    made by : <span className="text-uppercase"> { company } </span>
                   </h4>
                   <h4 className="text-blue">
-                    <strong>
-                      price : <span>$</span>
-                      {price}
-                    </strong>
+                    <strong> price : <span>$</span> { price } </strong>
                   </h4>
-                  <p className="text-capitalize font-weight-bold mt-3 mb-0">
-                    some info about the product:
-                  </p>
-                  <p className="text-muted lead"> {info} </p>
+                  <p className="text-capitalize fs-5 fw-bold mt-3 mb-0"> some info about the product: </p>
+                  <p className="text-muted lead"> { info } </p>
 
                   {/* buttons */}
                   <div>
@@ -51,14 +45,17 @@ export default class Details extends Component {
                       <ButtonContainer>back to product</ButtonContainer>
                     </Link>
                     <ButtonContainer
-                      disabled={inCart ? true : false}
+                      disabled = { inCart ? true: false}
                       onClick={() => {
-                        value.addToCart();
+                        value.addToCart(id);
                       }}
                     >
-                      {inCart ? "inCart" : "add to cart"}
+                      { inCart ? 'inCart': 'add to cart'}
                     </ButtonContainer>
                   </div>
+                  {/* buttons end */}
+
+
                 </div>
               </div>
             </div>
