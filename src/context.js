@@ -9,7 +9,7 @@ class ProductProvider extends Component {
     products: [],
     detailProduct: detailProduct,
     cart: [],
-    modalOpen: true,
+    modalOpen: false,
     modalProduct: detailProduct
   };
 
@@ -52,15 +52,15 @@ class ProductProvider extends Component {
   };
   openModal = (id) => {
       const product = this.getItem(id);
-      this.setState(()=>{
-          return {modalProduct: product, modalOpen: true}
-      })
-  }
+      this.setState(() => {
+          return { modalProduct: product, modalOpen: true };
+      });
+  };
   closeModal = () => {
       this.setState(() => {
-          return { modalOpen: false }
-      })
-  }
+          return { modalOpen: false };
+      });
+  };
   /*
         Here the problem is Javasricpt referencing, it is not copying the values
         instead it assign reference to the state, so for making a deep copy we have to
