@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { ProductConsumer } from "../context";
 import { ButtonContainer } from "./Button.js";
 import { Link } from "react-router-dom";
-
 export default class Modal extends Component {
   render() {
     return (
@@ -24,12 +23,12 @@ export default class Modal extends Component {
                       <h5> { title } </h5>
                       <h5 className="text-muted">price : $ {price}</h5>
                       <Link to="/">
-                        <ButtonContainer onClick={()=>closeModal()}>
+                        <ButtonContainer onClick={()=>{closeModal();}}>
                             continue shopping
                         </ButtonContainer>
                       </Link>
                       <Link to="/cart">
-                        <ButtonContainer cart onClick={()=>closeModal()}>
+                        <ButtonContainer cart onClick={()=>{closeModal();}}>
                             go to cart
                         </ButtonContainer>
                       </Link>
