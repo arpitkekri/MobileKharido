@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ProductConsumer } from '../context';
+import PropTypes from 'prop-types'
 
 export default class Product extends Component {
   render() {
@@ -22,6 +23,7 @@ export default class Product extends Component {
               }
             </button>
           </div>
+
           {/* card footer */}
           <div className="card-footer d-flex justify-content-between">
             <p className="align-self-center mb-0">{title}</p>
@@ -36,6 +38,17 @@ export default class Product extends Component {
     )
   }
 }
+
+// Catching the mistakes in the data and gives warning failing to propTypes
+Product.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool
+  }).isRequired
+};
 
 const ProductWrapper = styled.div`
   .card{
