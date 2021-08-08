@@ -36,7 +36,7 @@ export default class Details extends Component {
                   <h4 className="text-blue">
                     <strong> price : <span>$</span> { price } </strong>
                   </h4>
-                  <p className="text-capitalize fs-5 fw-bold mt-3 mb-0"> some info about the product: </p>
+                  <p className="text-capitalize font-weight-bold mt-3 mb-0"> some info about the product: </p>
                   <p className="text-muted lead"> { info } </p>
 
                   {/* buttons */}

@@ -15,15 +15,15 @@ export default class Navbar extends Component {
                     <img src = { logo2 } alt="Jain Mobile Point" className = "navbar-brand" width = "60"/>
                 </Link>
                 <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ms-5">
+                    <li className="nav-item ml-5">
                         <Link to="/" className="nav-link">
                         products
                         </Link>
                     </li>
                 </ul>
-                <Link to="/cart" className = "ms-auto">
+                <Link to="/cart" className = "ml-auto">
                     <ButtonContainer>
-                        <span className="me-2">
+                        <span className="mr-2">
                             <i className="fas fa-cart-plus " />
                         </span>
                         my cart

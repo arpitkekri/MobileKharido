@@ -44,9 +44,9 @@ export default class Product extends Component {
           <div className="card-footer d-flex justify-content-between">
             <p className="align-self-center mb-0">{title}</p>
             <h5 className="text-blue font-italic mb-0">
-              <span className="me-1">₹</span>
+              <span className="mr-1">₹</span>
               {price}
-              <span className="me-1">/-</span>
+              <span className="mr-1">/-</span>
             </h5>
           </div>
         </div>
