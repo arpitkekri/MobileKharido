@@ -12,7 +12,8 @@ class ProductProvider extends Component {
     modalOpen: false,
     modalProduct: detailProduct,
     cartSubTotal: 0,
-    cartTax: 0,
+    cartTaxSGST: 0,
+    cartTaxCGST: 0,
     cartTotal:0
   };
 
@@ -51,7 +52,9 @@ class ProductProvider extends Component {
     product.total = price;
     this.setState(()=>{
         return { cart: [...this.state.cart, product] };
-    }, () => {console.log(this.state)});
+    }, () => {
+      this.addTotals();
+    });
   };
   openModal = (id) => {
       const product = this.getItem(id);
@@ -71,10 +74,47 @@ class ProductProvider extends Component {
     console.log("This is decrement method");
   }
   removeItem = (id) => {
-      console.log('item removed');
+      let tempProduct = [...this.state.products];
+      let tempCart = [...this.state.cart];
+      tempCart = tempCart.filter(item => item.id !== id);
+      const index = tempProduct.indexOf(this.getItem(id));
+      let removedProduct = tempProduct[index];
+      removedProduct.inCart = false;
+      removedProduct.count = 0;
+      removedProduct.total = 0;
+      this.setState(()=>{
+        return {
+          cart: [...tempCart], 
+          product: [...tempProduct]
+        };
+      }, () => {
+        this.addTotals();
+      })
   }
   clearCart = () => {
-      console.log('card cleared');
+      this.setState(()=>{
+        return { cart: [] };
+      }, () => {
+        this.setProducts();
+        this.addTotals();
+      });
+  }
+  addTotals = () => {
+    let subTotal = 0;
+    this.state.cart.map(item => (subTotal += item.total));
+    const tempSGST = subTotal * 0.09;
+    const tempCGST = subTotal * 0.09;
+    const SGST = parseFloat(tempSGST.toFixed(2));
+    const CGST = parseFloat(tempCGST.toFixed(2));
+    const total = parseFloat((subTotal + SGST + CGST).toFixed(2));
+    this.setState(()=>{
+      return {
+        cartSubTotal: subTotal,
+        cartTaxSGST: SGST,
+        cartTaxCGST: CGST,
+        cartTotal: total
+      }
+    })
   }
   /*
         Here the problem is Javasricpt referencing, it is not copying the values
