@@ -72,3 +72,10 @@ a.float-btn:hover {
   visibility: visible;
   opacity: 1;
 }
+
+.a-price-symbol{
+  position: relative;
+  top: -0.5rem;
+  bottom: auto;
+  font-size: 15px;
+}

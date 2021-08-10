@@ -12,7 +12,7 @@ export default function CartItem({item, value}) {
             <span className="d-lg-none">product : </span> { title }
           </div>
           <div className="col-10 mx-auto col-lg-2 my-auto">
-            <span className="d-lg-none">price : </span> ${ price }
+            <span className="d-lg-none">price : </span> <span className="ml-1">₹</span> {price} <span className="mr-1">/-</span>
           </div>
           <div className="col-10 mx-auto col-lg-2 my-auto">
             <div className="d-flex justify-content-center">
@@ -32,7 +32,7 @@ export default function CartItem({item, value}) {
           </div>
 
           <div className="col-10 mx-auto col-lg-2 my-auto">
-            <strong>item total : ${total}</strong>
+            <strong>item total : <span className="ml-1">₹</span> {total} <span className="mr-1">/-</span></strong>
           </div>
         </div>
     )

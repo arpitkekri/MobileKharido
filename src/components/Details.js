@@ -34,7 +34,7 @@ export default class Details extends Component {
                     made by : <span className="text-uppercase"> { company } </span>
                   </h4>
                   <h4 className="text-blue">
-                    <strong> price : <span>$</span> { price } </strong>
+                    <strong> price : <span className="ml-1 a-price-symbol">₹</span>{ price }<span className="mr-1"> /- </span> </strong>
                   </h4>
                   <p className="text-capitalize font-weight-bold mt-3 mb-0"> some info about the product: </p>
                   <p className="text-muted lead"> { info } </p>
