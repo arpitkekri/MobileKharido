@@ -8,13 +8,13 @@ export default function CartItem({item, value}) {
           <div className="col-10 mx-auto col-lg-2">
             <img src={ img } style={{width:'5rem',height:'5rem'}} className="img-fluid" alt="product" />
           </div>
-          <div className="col-10 mx-auto col-lg-2">
+          <div className="col-10 mx-auto col-lg-2 my-auto">
             <span className="d-lg-none">product : </span> { title }
           </div>
-          <div className="col-10 mx-auto col-lg-2">
+          <div className="col-10 mx-auto col-lg-2 my-auto">
             <span className="d-lg-none">price : </span> ${ price }
           </div>
-          <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
+          <div className="col-10 mx-auto col-lg-2 my-auto">
             <div className="d-flex justify-content-center">
               <div>
                 <span className="btn btn-black mx-1" onClick={()=>decrement(id)}> − </span> 
@@ -25,13 +25,13 @@ export default function CartItem({item, value}) {
           </div>
           {/* End button column */}
 
-          <div className="col-10 mx-auto col-lg-2">
+          <div className="col-10 mx-auto col-lg-2 my-auto">
             <div className="cart-icon" onClick={()=>removeItem(id)}>
                 <i className="fas fa-trash"></i>
             </div>
           </div>
 
-          <div className="col-10 mx-auto col-lg-2">
+          <div className="col-10 mx-auto col-lg-2 my-auto">
             <strong>item total : ${total}</strong>
           </div>
         </div>
