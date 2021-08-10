@@ -14,7 +14,8 @@ class ProductProvider extends Component {
     cartSubTotal: 0,
     cartTaxSGST: 0,
     cartTaxCGST: 0,
-    cartTotal:0
+    cartTotal:0,
+    cartTotalUSD: 0
   };
 
   // componentDidMount -> This function called immediately after a component is mounted. Setting state here will trigger re-rendering.
@@ -129,12 +130,15 @@ class ProductProvider extends Component {
     const SGST = parseFloat(tempSGST.toFixed(2));
     const CGST = parseFloat(tempCGST.toFixed(2));
     const total = parseFloat((subTotal + SGST + CGST).toFixed(2));
+    const totalUSD = parseFloat((total*0.01368).toFixed(2));
+
     this.setState(()=>{
       return {
         cartSubTotal: subTotal,
         cartTaxSGST: SGST,
         cartTaxCGST: CGST,
-        cartTotal: total
+        cartTotal: total,
+        cartTotalUSD: totalUSD
       }
     })
   }
