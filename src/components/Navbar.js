@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import logo from '../logo.svg';
-import logo2 from '../favicon3.ico';
+import logo from '../favicon.ico';
 import styled from 'styled-components';
 import { ButtonContainer } from './Button';
 export default class Navbar extends Component {
@@ -12,7 +12,7 @@ export default class Navbar extends Component {
                 Creative Commons (Attribution 3.0 Unported);
                 https://www.iconfinder.com/Makoto_msk */}
                 <Link to = "/">
-                    <img src = { logo2 } alt="Jain Mobile Point" className = "navbar-brand" width = "60"/>
+                    <img src = { logo } alt="Jain Mobile Point" className = "navbar-brand" width = "60"/>
                 </Link>
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
