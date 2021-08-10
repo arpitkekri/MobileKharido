@@ -72,6 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 # To view this website working head over to deployed [Website](https://mobile-point.netlify.app/)
+- for testing paypal --> email = website@tester.com && Password = websitetester
 
 
 <!-- https://github.com/thinhvo0108/react-paypal-express-checkout/blob/master/README.md -->
