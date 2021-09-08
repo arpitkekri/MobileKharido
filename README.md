@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-# To view this website working head over to deployed [Website](https://mobile-point.netlify.app/)
+# To view this website working head over to deployed [Website](https://mobilekharido.netlify.app/)
 - for testing paypal --> email = website@tester.com && Password = websitetester
 
 
